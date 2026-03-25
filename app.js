@@ -60,6 +60,17 @@ const GPTS = [
     logo: "HemodynAI.png",
     logoFallback: "❤️",
   },
+     {
+    id: "cardiofailure-ai",
+    name: "CardioFailure AI",
+    category: "hemodinamia",
+    categoryLabel: "Hemodinamia y Perfusión",
+    categoryEmoji: "❤️",
+    description: "Simulación y razonamiento clínico en insuficiencia cardíaca basado en guías y evidencia actual.",
+    url: "https://chatgpt.com/g/g-697ffa7a15988191aae725ae2958379f-cardiofailure-aitm",
+    logo: "CardioFailure AI.png",
+    logoFallback: "❤️",
+  },
   {
     id: "hematicu-pro",
     name: "HematICU Pro",
