@@ -46,7 +46,7 @@ const GPTS = [
     categoryEmoji: "🫁",
     description: "Entrenamiento fisiológico y toma de decisiones en ventilación mecánica pediátrica con enfoque académico avanzado.",
     url: "https://chatgpt.com/g/g-68b0d6e344388191840e545b79df7c24-ventrixped-ai-simulador-academico-vm-en-ucip",
-    logo: "VentrixPed AI.png",
+    logo: "VentrixPedAI 6.png",
     logoFallback: "🫁",
   },
   {
