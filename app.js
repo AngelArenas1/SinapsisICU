@@ -148,6 +148,28 @@ const GPTS = [
     logo: "ECMOICU.png",
     logoFallback: "🫀",
   },
+     {
+    id: "hippocrates-gpt",
+    name: "Hippocrates GPT",
+    category: "investigacion",
+    categoryLabel: "Investigación y Metodología",
+    categoryEmoji: "🔬",
+    description: "Diseño de protocolos, análisis estadístico y estructuración de investigación clínica con rigor metodológico.",
+    url: "https://chatgpt.com/g/g-6878fcee526c8191a5d927f53bfecd99-hippocrates-gpt",
+    logo: "Hippocrates GPT.png",
+    logoFallback: "🔬",
+  },
+  {
+    id: "criticus-edu",
+    name: "Criticus EDU v2.0",
+    category: "investigacion",
+    categoryLabel: "Investigación y Metodología",
+    categoryEmoji: "🔬",
+    description: "Evaluación crítica de artículos científicos mediante listas de chequeo metodológicas. Lectura crítica estructurada.",
+    url: "https://chatgpt.com/g/g-684f1f1808908191a54ccad8910ef1f7-criticus-edu-v2-0-evaluador-de-articulos-cient",
+    logo: "Criticus EDU 2.0.png",
+    logoFallback: "🔬",
+  },
 ];
 
 // ── CATEGORY COLOR MAP ────────────────────────────────────────
@@ -160,6 +182,7 @@ const CATEGORY_COLORS = {
   renal:       { hex: "#14b8a6", rgb: "20,184,166"  },
   riesgo:      { hex: "#f59e0b", rgb: "245,158,11"  },
   ecmo:        { hex: "#ec4899", rgb: "236,72,153"  },
+  investigacion: { hex: "#10b981", rgb: "16,185,129"  },
 };
 
 // ── STATE ─────────────────────────────────────────────────────
