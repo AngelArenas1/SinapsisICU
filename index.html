@@ -5,13 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SinapsisICU AI — Ecosistema de IA para Medicina Crítica</title>
   <meta name="description" content="Acceso unificado a los 12 asistentes de IA especializados en Unidad de Cuidados Intensivos." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="SinapsisICU.png" />
+  <link rel="apple-touch-icon" href="SinapsisICU.png" />
+
+  <!-- Open Graph (WhatsApp, LinkedIn, Facebook, Telegram) -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://angelarenas1.github.io/SinapsisICU/" />
+  <meta property="og:title"       content="SinapsisICU AI — Ecosistema de IA para Medicina Crítica" />
+  <meta property="og:description" content="12 asistentes de inteligencia artificial especializados en UCI: sepsis, ventilación, hemodinamia, neuro, ECMO y más." />
+  <meta property="og:image"       content="https://angelarenas1.github.io/SinapsisICU/SinapsisICU.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale"      content="es_ES" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="SinapsisICU AI — Ecosistema de IA para Medicina Crítica" />
+  <meta name="twitter:description" content="12 asistentes de IA especializados en UCI disponibles en un solo lugar." />
+  <meta name="twitter:image"       content="https://angelarenas1.github.io/SinapsisICU/SinapsisICU.png" />
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ── HEADER ───────────────────────────────────────────────── -->
   <header class="site-header">
     <div class="header-inner">
       <div class="brand">
@@ -29,27 +49,18 @@
     </div>
   </header>
 
-  <!-- ── HERO ─────────────────────────────────────────────────── -->
   <section class="hero">
     <div class="hero-inner">
       <h1>Tu ecosistema de IA<br><span class="gradient-text">para Cuidados Intensivos</span></h1>
       <p class="hero-sub">12 asistentes especializados, entrenados con evidencia científica actualizada, disponibles en un solo lugar.</p>
-
-      <!-- Search -->
       <div class="search-wrap">
         <span class="search-icon">⌕</span>
-        <input
-          type="search"
-          id="search-input"
-          placeholder="Buscar asistente… ej. ventilación, sepsis, ECMO"
-          autocomplete="off"
-        />
+        <input type="search" id="search-input" placeholder="Buscar asistente… ej. ventilación, sepsis, ECMO" autocomplete="off" />
         <kbd class="search-clear" id="search-clear" style="display:none">✕</kbd>
       </div>
     </div>
   </section>
 
-  <!-- ── CATEGORY FILTER ──────────────────────────────────────── -->
   <nav class="category-nav" id="category-nav" aria-label="Filtrar por categoría">
     <div class="category-nav-inner">
       <button class="cat-btn active" data-cat="all">Todos</button>
@@ -64,7 +75,6 @@
     </div>
   </nav>
 
-  <!-- ── GRID ─────────────────────────────────────────────────── -->
   <main class="grid-section">
     <div class="gpt-grid" id="gpt-grid"></div>
     <div class="no-results" id="no-results" style="display:none">
