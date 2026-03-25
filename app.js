@@ -13,7 +13,7 @@ const GPTS = [
     categoryEmoji: "🦠",
     description: "Síntesis crítica de evidencia y guías actualizadas en sepsis con enfoque académico y razonamiento clínico estructurado.",
     url: "https://chatgpt.com/g/g-69971e4e32408191a796bdaa03e256f1-sepsis-evidence-ai",
-    logo: "Sepsis Evidence AI.png",
+    logo: "Sepsis_Evidence_AI.png",
     logoFallback: "🦠",
   },
   {
@@ -79,7 +79,7 @@ const GPTS = [
     categoryEmoji: "🩸",
     description: "Entrenamiento estructurado en diagnóstico y estratificación del tromboembolismo pulmonar. Algoritmos Wells, PESI y terapia.",
     url: "https://chatgpt.com/g/g-69315f24400881919f58c8cc655982da-pe-code-edu-pulmonary-embolism-code-educac-v-2-0",
-    logo: "PE-CODE-EDU.png",
+    logo: "PE CODE EDU.png",
     logoFallback: "🩸",
   },
   {
