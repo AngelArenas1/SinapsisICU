@@ -1,0 +1,21 @@
+{
+  "name": "SinapsisICU AI",
+  "short_name": "SinapsisICU",
+  "description": "15 asistentes de IA especializados en Unidad de Cuidados Intensivos",
+  "start_url": "/SinapsisICU/",
+  "scope": "/SinapsisICU/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#050915",
+  "background_color": "#050915",
+  "lang": "es",
+  "categories": ["medical", "education", "productivity"],
+  "icons": [
+    {
+      "src": "SinapsisICU.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
