@@ -1,9 +1,3 @@
-/* ─────────────────────────────────────────────────────────────
-   SinapsisICU AI — App Logic
-   Search + Category filter · Card renderer
-   ───────────────────────────────────────────────────────────── */
-
-// ── GPT DATA ─────────────────────────────────────────────────
 const GPTS = [
   {
     id: "sepsis-evidence-ai",
@@ -60,7 +54,7 @@ const GPTS = [
     logo: "HemodynAI.png",
     logoFallback: "❤️",
   },
-     {
+  {
     id: "cardiofailure-ai",
     name: "CardioFailure AI",
     category: "hemodinamia",
@@ -148,7 +142,7 @@ const GPTS = [
     logo: "ECMOICU.png",
     logoFallback: "🫀",
   },
-     {
+  {
     id: "hippocrates-gpt",
     name: "Hippocrates GPT",
     category: "investigacion",
@@ -167,29 +161,26 @@ const GPTS = [
     categoryEmoji: "🔬",
     description: "Evaluación crítica de artículos científicos mediante listas de chequeo metodológicas. Lectura crítica estructurada.",
     url: "https://chatgpt.com/g/g-684f1f1808908191a54ccad8910ef1f7-criticus-edu-v2-0-evaluador-de-articulos-cient",
-    logo: "Criticus EDU 2.0.png",
+    logo: "Criticus EDU.png",
     logoFallback: "🔬",
   },
 ];
 
-// ── CATEGORY COLOR MAP ────────────────────────────────────────
 const CATEGORY_COLORS = {
-  sepsis:      { hex: "#ef4444", rgb: "239,68,68"   },
-  ventilacion: { hex: "#3b82f6", rgb: "59,130,246"  },
-  hemodinamia: { hex: "#f43f5e", rgb: "244,63,94"   },
-  coagulacion: { hex: "#dc2626", rgb: "220,38,38"   },
-  neuro:       { hex: "#8b5cf6", rgb: "139,92,246"  },
-  renal:       { hex: "#14b8a6", rgb: "20,184,166"  },
-  riesgo:      { hex: "#f59e0b", rgb: "245,158,11"  },
-  ecmo:        { hex: "#ec4899", rgb: "236,72,153"  },
+  sepsis:        { hex: "#ef4444", rgb: "239,68,68"   },
+  ventilacion:   { hex: "#3b82f6", rgb: "59,130,246"  },
+  hemodinamia:   { hex: "#f43f5e", rgb: "244,63,94"   },
+  coagulacion:   { hex: "#dc2626", rgb: "220,38,38"   },
+  neuro:         { hex: "#8b5cf6", rgb: "139,92,246"  },
+  renal:         { hex: "#14b8a6", rgb: "20,184,166"  },
+  riesgo:        { hex: "#f59e0b", rgb: "245,158,11"  },
+  ecmo:          { hex: "#ec4899", rgb: "236,72,153"  },
   investigacion: { hex: "#10b981", rgb: "16,185,129"  },
 };
 
-// ── STATE ─────────────────────────────────────────────────────
 let activeCategory = "all";
 let searchQuery    = "";
 
-// ── DOM REFS ──────────────────────────────────────────────────
 const grid        = document.getElementById("gpt-grid");
 const noResults   = document.getElementById("no-results");
 const searchInput = document.getElementById("search-input");
@@ -197,10 +188,8 @@ const searchClear = document.getElementById("search-clear");
 const countBadge  = document.getElementById("visible-count");
 const catButtons  = document.querySelectorAll(".cat-btn");
 
-// ── RENDER ────────────────────────────────────────────────────
 function renderCards() {
   const query = searchQuery.toLowerCase().trim();
-
   const filtered = GPTS.filter((gpt) => {
     const matchCat  = activeCategory === "all" || gpt.category === activeCategory;
     const matchText = !query ||
@@ -210,13 +199,11 @@ function renderCards() {
     return matchCat && matchText;
   });
 
-  // Update counter badge
   const total = filtered.length;
   countBadge.textContent = total === GPTS.length
     ? `${total} asistentes`
     : `${total} de ${GPTS.length} asistentes`;
 
-  // Clear grid
   grid.innerHTML = "";
 
   if (filtered.length === 0) {
@@ -236,11 +223,8 @@ function renderCards() {
     card.innerHTML = `
       <div class="card-logo-wrap">
         <div class="card-logo">
-          <img
-            src="${gpt.logo}"
-            alt="${gpt.name}"
-            onerror="this.parentElement.textContent='${gpt.logoFallback}'"
-          />
+          <img src="${gpt.logo}" alt="${gpt.name}"
+               onerror="this.parentElement.textContent='${gpt.logoFallback}'" />
         </div>
         <span class="card-category-badge">
           ${gpt.categoryEmoji} ${gpt.categoryLabel}
@@ -249,13 +233,8 @@ function renderCards() {
       <div class="card-body">
         <h2 class="card-title">${gpt.name}</h2>
         <p class="card-desc">${highlightMatch(gpt.description, query)}</p>
-        <a
-          href="${gpt.url}"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="card-open-btn"
-          aria-label="Abrir ${gpt.name} en ChatGPT"
-        >
+        <a href="${gpt.url}" target="_blank" rel="noopener noreferrer"
+           class="card-open-btn" aria-label="Abrir ${gpt.name} en ChatGPT">
           Abrir en ChatGPT
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 8h10M9 4l4 4-4 4"/>
@@ -263,22 +242,16 @@ function renderCards() {
         </a>
       </div>
     `;
-
     grid.appendChild(card);
   });
 }
 
-// ── HIGHLIGHT SEARCH MATCHES ──────────────────────────────────
 function highlightMatch(text, query) {
   if (!query) return text;
   const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return text.replace(
-    new RegExp(`(${escaped})`, "gi"),
-    "<mark>$1</mark>"
-  );
+  return text.replace(new RegExp(`(${escaped})`, "gi"), "<mark>$1</mark>");
 }
 
-// ── EVENTS ────────────────────────────────────────────────────
 searchInput.addEventListener("input", (e) => {
   searchQuery = e.target.value;
   searchClear.style.display = searchQuery ? "flex" : "none";
@@ -302,7 +275,6 @@ catButtons.forEach((btn) => {
   });
 });
 
-// ── KEYBOARD SHORTCUT: "/" focuses search ────────────────────
 document.addEventListener("keydown", (e) => {
   if (e.key === "/" && document.activeElement !== searchInput) {
     e.preventDefault();
@@ -314,17 +286,10 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-// ── HIGHLIGHT STYLE ───────────────────────────────────────────
 const style = document.createElement("style");
 style.textContent = `
-  mark {
-    background: rgba(59,130,246,.25);
-    color: #93c5fd;
-    border-radius: 2px;
-    padding: 0 2px;
-  }
+  mark { background: rgba(59,130,246,.25); color: #93c5fd; border-radius: 2px; padding: 0 2px; }
 `;
 document.head.appendChild(style);
 
-// ── INIT ──────────────────────────────────────────────────────
 renderCards();
