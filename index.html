@@ -29,7 +29,17 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="SinapsisICU" />
+  <meta name="theme-color" content="#050915" />
 </head>
+    <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/SinapsisICU/sw.js");
+    }
+  </script>
 <body>
 
   <header class="site-header">
