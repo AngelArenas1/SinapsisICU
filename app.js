@@ -161,7 +161,7 @@ const GPTS = [
     categoryEmoji: "🔬",
     description: "Evaluación crítica de artículos científicos mediante listas de chequeo metodológicas. Lectura crítica estructurada.",
     url: "https://chatgpt.com/g/g-684f1f1808908191a54ccad8910ef1f7-criticus-edu-v2-0-evaluador-de-articulos-cient",
-    logo: "Criticus EDU.png",
+    logo: "Criticus EDU 2.0.png",
     logoFallback: "🔬",
   },
 ];
